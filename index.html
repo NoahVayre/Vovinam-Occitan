@@ -1,1 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vovinam Viet Vo Dao - Catalogue</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <!-- Barre de navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fa-solid fa-yin-yang"></i> Vovinam VVD
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" id="link-home" class="active">Accueil</a></li>
+            <li><a href="#" id="link-catalog">Catalogue des Techniques</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page d'accueil -->
+    <section id="home-section" class="page-section active-section">
+        <header class="hero">
+            <h1>Bienvenue sur le portail technique</h1>
+            <p>Retrouvez toutes les techniques, vidéos et descriptions pour votre progression.</p>
+            <button id="btn-go-catalog" class="btn-primary">Accéder au catalogue</button>
+        </header>
+        
+        <div class="news-container">
+            <h2><i class="fa-regular fa-newspaper"></i> Actualités du Club</h2>
+            <div class="news-card">
+                <h3>Mise à jour du catalogue</h3>
+                <p>Les vidéos pour le programme de la ceinture bleue ont été ajoutées en non répertorié. Vous pouvez y accéder via l'onglet Catalogue.</p>
+                <span class="news-date">Aujourd'hui</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Catalogue -->
+    <section id="catalog-section" class="page-section">
+        <div class="filters-container">
+            <div class="search-bar">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="search-input" placeholder="Rechercher une technique (ex: Da Thang)...">
+            </div>
+            
+            <div class="dropdowns">
+                <select id="filter-belt">
+                    <option value="Toutes">Toutes les ceintures</option>
+                    <option value="Bleue">Ceinture Bleue</option>
+                    <option value="Bleue 1 Cấp">Bleue 1 Cấp</option>
+                    <option value="Bleue 2 Cấp">Bleue 2 Cấp</option>
+                    <option value="Bleue 3 Cấp">Bleue 3 Cấp</option>
+                    <option value="Jaune">Ceinture Jaune</option>
+                </select>
+
+                <select id="filter-type">
+                    <option value="Tous">Tous les types</option>
+                    <option value="Percussion">Percussion</option>
+                    <option value="Blocage">Blocage</option>
+                    <option value="Chute">Chute</option>
+                    <option value="Ciseaux">Ciseaux (Don Chan)</option>
+                    <option value="Quyen">Quyen</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid-techniques" id="grid-techniques">
+            <!-- Les cartes seront injectées ici par JavaScript -->
+        </div>
+    </section>
+
+    <!-- Fenêtre Modale (Pop-up) -->
+    <div id="technique-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal"><i class="fa-solid fa-xmark"></i></span>
+            <div class="modal-header">
+                <h2 id="modal-title">Nom de la technique</h2>
+                <div class="modal-badges">
+                    <span id="modal-belt" class="badge badge-belt">Ceinture</span>
+                    <span id="modal-type" class="badge badge-type">Type</span>
+                </div>
+            </div>
+            <div class="modal-video">
+                <iframe id="modal-iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="modal-description">
+                <h3>Description et points clés</h3>
+                <p id="modal-text">Description de la technique...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
